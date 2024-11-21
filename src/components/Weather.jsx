@@ -38,22 +38,22 @@ export default function Weather() {
   };
 
   return (
-    <div>
+    <div className="w-full p-4 md:p-16">
       {error && <p>{error.message}</p>}
       {apiError && <p>{apiError.message}</p>}
 
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="flex">
         <input
           type="text"
           name=""
           id=""
           value={city}
-          className="p-2 border border-gray rounded"
+          className="p-2  w-full border-gray bg-transparent outline-none border-2 border-gray-700 rounded"
           placeholder="Enter City Name"
           onChange={(e) => setCity(e.target.value)}
         />
         <button
-          className="ml-2 p-2 bg-blue-500 text-white rounded"
+          className="ml-2 py-2 px-10 bg-blue-500 text-white rounded"
           type="submit"
         >
           Search

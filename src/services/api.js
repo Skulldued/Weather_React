@@ -4,16 +4,14 @@ const weatherURL = "https://api.openweathermap.org/data/2.5";
 const currentWeatherUrl = `${weatherURL}/weather`;
 const forecastWeatherUrl = `${weatherURL}/forecast`;
 
-export const weatherIconsUrl = "https://openweathermap.org/img/wn/"
+export const weatherIconsUrl = "https://openweathermap.org/img/wn/";
 
-const test = "2ec0dbeb1c36bb4a2050c5c0f002a632";
 const apiKey = import.meta.env.VITE_SUNNY_WEATHER_API;
-
 
 export const fetchWeatherByCoords = async (geoData) => {
   if (!geoData?.latitude || !geoData?.longitude) return;
   const params = {
-    appid: test,
+    appid: apiKey,
     lat: geoData.latitude,
     lon: geoData.longitude,
     units: "metric",
@@ -26,14 +24,11 @@ export const fetchWeatherByCoords = async (geoData) => {
   return { currentWeather: current.data, forecast: forecast.data };
 };
 
-
-
-
 /**Search By City Name */
 export const fetchWeatherByCity = async (searchQuery) => {
   if (!searchQuery) return;
   const params = {
-    appid: test,
+    appid: apiKey,
     q: searchQuery,
     units: "metric",
   };

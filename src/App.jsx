@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <div>
+      <div className="w-full bg-black text-white">
         <Weather />
       </div>
     </QueryClientProvider>
