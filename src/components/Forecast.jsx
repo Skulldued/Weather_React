@@ -7,7 +7,7 @@ export function Forecast({ forecast }) {
       <h2 className="text-lg font-bold mb-4 text-slate-400 border-b-2 border-slate-600 pb-3 rounded-md">
         Forecast Weather
       </h2>
-      <ul className="space-y-3 flex flex-wrap md:flex-nowrap justify-center lg:justify-between gap-4">
+      <ul className="space-y-3 flex flex-wrap lg:flex-nowrap justify-center lg:justify-between gap-4">
         {forecast.list.slice(0, 5).map((forecastItem, index) => {
           const { dt, weather, main, wind } = forecastItem;
           return (
